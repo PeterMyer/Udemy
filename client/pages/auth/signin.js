@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import useRequest from '../../hooks/useRequest';
+import useRequest from '../../hooks/use-request';
 import Router from 'next/router'
 
 const SignUp = () => {
@@ -18,7 +18,7 @@ const SignUp = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
 
-        doRequest();
+        await doRequest();
     }
 
     return (
@@ -28,7 +28,7 @@ const SignUp = () => {
                 <label>Email Address</label>
                 <input 
                     value = {email}
-                    onChange = {event => setEmail(event.target.value)}
+                    onChange = {(event) => setEmail(event.target.value)}
                     className="form-control"
                 />
             </div>
@@ -36,7 +36,7 @@ const SignUp = () => {
                 <label>Password</label>
                 <input 
                     value={password}
-                    onChange = {event => setPassword(event.target.value)}
+                    onChange = {(event) => setPassword(event.target.value)}
                     type="password"
                     className="form-control"
                 />
