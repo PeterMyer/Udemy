@@ -18,7 +18,7 @@ router.post('api/payments',
         body('orderId')
             .not()
             .isEmpty()
-    ],
+    ],validateRequest,
 async (req: Request, res: Response) => {
     res.send({ success: true});
 });
