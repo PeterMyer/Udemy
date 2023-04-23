@@ -4,9 +4,9 @@ A repository to store all code from Udemy courses and tutorials. Chose to move t
 In Progress Courses:
 
 [Microservices with Node JS and React](https://www.udemy.com/course/microservices-with-node-js-and-react/)
-- 70% Complete
+- 95% Complete
 - Event-based microservices architecture
-- Kubernetes, Docker, NATS Streaming
+- Kubernetes, Docker, NATS Streaming, Next.js, MongoDB
 
 [React and Typescript](https://www.udemy.com/course/react-and-typescript-build-a-portfolio-project/)
 - 1%
