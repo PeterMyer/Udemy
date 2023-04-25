@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/typescript-appx/fetchjson/node_modules
 
 # testing
 /coverage
