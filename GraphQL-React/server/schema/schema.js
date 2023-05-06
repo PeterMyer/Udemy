@@ -6,6 +6,7 @@ const {
   GraphQLSchema,
   GraphQLID,
   GraphQLInt,
+  GraphQLList,
 } = graphql;
 
 const MovieType = new GraphQLObjectType({
@@ -14,6 +15,7 @@ const MovieType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     genre: { type: GraphQLString },
+    director: { type: DirectorType, resolve(parent, args) {} },
   }),
 });
 
@@ -23,6 +25,10 @@ const DirectorType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     age: { type: GraphQLInt },
+    movies: {
+      type: new GraphQLList(MovieType),
+      resolve(parent, args) {},
+    },
   }),
 });
 
@@ -37,6 +43,14 @@ const RootQuery = new GraphQLObjectType({
     director: {
       type: DirectorType,
       args: { id: { type: GraphQLID } },
+      resolve(parent, args) {},
+    },
+    movies: {
+      type: new GraphQLList(MovieType),
+      resolve(parent, args) {},
+    },
+    directors: {
+      type: new GraphQLList(DirectorType),
       resolve(parent, args) {},
     },
   }),
