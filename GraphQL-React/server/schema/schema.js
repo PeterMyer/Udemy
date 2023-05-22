@@ -1,6 +1,6 @@
 import graphql from 'graphql';
-import { Movie } from '../models/movie';
-import { Director } from '../models/director';
+import { Movie } from '../models/movie.js';
+import { Director } from '../models/director.js';
 
 const {
   GraphQLObjectType,
