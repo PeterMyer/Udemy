@@ -10,6 +10,7 @@ In Progress Courses:
 - Focused on details of working with React and Typescript together
 
 Complete Courses:
+
 [Microservices with Node JS and React](https://www.udemy.com/course/microservices-with-node-js-and-react/)
 
 - Event-based microservices architecture
