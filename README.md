@@ -14,3 +14,8 @@ Complete Courses:
 
 - Event-based microservices architecture
 - Kubernetes, Docker, NATS Streaming, Next.js, MongoDB
+
+[GraphQL with React](https://www.udemy.com/course/graphql-with-react-build-real-world-graphql-projects/)
+
+- React + GraphQL language course
+- GraphQL, Apollo, GraphQL Yoga, MongoDB Atlas
