@@ -1,21 +1,12 @@
-import { gql, useQuery } from '@apollo/client';
-
-const GET_MOVIES_QUERY = gql`
-  {
-    movies {
-      name
-      genre
-      id
-    }
-  }
-`;
+import { useQuery } from '@apollo/client';
+import { GET_MOVIES_QUERY } from '../queries/queries';
 
 function MovieList() {
   const { loading, data, error } = useQuery(GET_MOVIES_QUERY);
 
   if (loading) return <p>Loading...</p>;
 
-  const renderMovies = (data) => {
+  const renderMovies = () => {
     return data?.movies?.map((movie) => {
       return <li key={movie.id}>{movie.name}</li>;
     });

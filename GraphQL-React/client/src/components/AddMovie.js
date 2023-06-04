@@ -1,15 +1,12 @@
-import { gql, useQuery } from '@apollo/client';
-
-const GET_DIRECTORS_QUERY = gql`
-  {
-    directors {
-      name
-      id
-    }
-  }
-`;
+import { useState } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_DIRECTORS_QUERY, ADD_MOVIE_MUTATION } from '../queries/queries';
 
 function AddMovie() {
+  const [name, setName] = useState('');
+  const [genre, setGenre] = useState('');
+  const [directorId, setDirectorId] = useState('');
+  const [addMovie] = useMutation(ADD_MOVIE_MUTATION);
   const { loading, data, error } = useQuery(GET_DIRECTORS_QUERY);
 
   const renderDirectors = () => {
@@ -20,19 +17,44 @@ function AddMovie() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addMovie({
+      variables: {
+        name,
+        genre,
+        directorId,
+      },
+    });
+  };
+
   return (
-    <form id="add-movie">
+    <form id="add-movie" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="movie-name">Movie Name:</label>
-        <input id="movie-name" name="movie-name" type="text" />
+        <input
+          id="movie-name"
+          name="movie-name"
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
       <div>
         <label htmlFor="genre">Genre:</label>
-        <input id="genre" name="genre" type="text" />
+        <input
+          id="genre"
+          name="genre"
+          type="text"
+          onChange={(e) => setGenre(e.target.value)}
+        />
       </div>
       <div>
         <label htmlFor="director">Director:</label>
-        <select id="director" name="director">
+        <select
+          id="director"
+          name="director"
+          onChange={(e) => setDirectorId(e.target.value)}
+        >
           <option>Select a Director</option>
           {renderDirectors()}
         </select>
