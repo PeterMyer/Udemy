@@ -9,6 +9,11 @@ In Progress Courses:
 - 1%
 - Focused on details of working with React and Typescript together
 
+[Advanced CSS and Sass](https://www.udemy.com/course/advanced-css-and-sass/)
+
+- 20%
+- Exploring features of CSS and Sass, including Flexbox, Grid, and Animations
+
 Complete Courses:
 
 [Microservices with Node JS and React](https://www.udemy.com/course/microservices-with-node-js-and-react/)
